@@ -21,6 +21,12 @@ jobs:
       
       - name: Build
         run: npm run build
+        working-directory: build
+
+      - name: Upload as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          path: build/
 
   deploy:
     needs: build
