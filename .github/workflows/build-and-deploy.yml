@@ -1,5 +1,7 @@
 name: Build & Deploy
 
+on: [pull_request, push]
+
 permissions:
   contents: read
   pages: write
