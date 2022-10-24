@@ -16,6 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Prepare folder
+        run: mkdir -p build
+
       - run: npm ci
         working-directory: build
       
@@ -26,7 +29,7 @@ jobs:
       - name: Upload as artifact
         uses: actions/upload-artifact@v2
         with:
-          path: build/
+          path: /build
 
   deploy:
     needs: build

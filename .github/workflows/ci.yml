@@ -8,6 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Prepare folder
+        run: mkdir -p build
+
       - run: npm ci
         working-directory: build
       
