@@ -18,20 +18,18 @@ jobs:
       - uses: actions/checkout@v2
 
       - run: npm ci
-        working-directory: docs
+
       
       - name: Build
         run: npm run build
-        working-directory: docs
+
       
       - name: Disable Jekyll
-        run: touch ocs/build/.nojeykyll
+        run: touch docs/build/.nojeykyll
 
       - name: Upload as artifact
         uses: actions/upload-pages-artifact@v1
-        with:
-          name: test-deployment-artifact
-          path: docs/build/
+
 
   deploy:
     needs: build
