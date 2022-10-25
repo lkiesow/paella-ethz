@@ -23,10 +23,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      
-      - name: Disable Jekyll
-        run: touch docs/build/.nojeykyll
-
       - name: Upload as artifact
         uses: actions/upload-pages-artifact@v1
 
