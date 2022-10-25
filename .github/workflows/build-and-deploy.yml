@@ -13,21 +13,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Prepare folder
-        run: mkdir -p build
-
       - run: npm ci
-        working-directory: build
+        working-directory: docs
       
       - name: Build
         run: npm run build
-        working-directory: build
+        working-directory: docs
 
       - name: Upload as artifact
         uses: actions/upload-pages-artifact@v1
         with:
           name: test-deployment-artifact
-          path: build/
+          path: docs/build/
 
   deploy:
     needs: build
