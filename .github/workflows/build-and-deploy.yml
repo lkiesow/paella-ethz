@@ -24,7 +24,7 @@ jobs:
         working-directory: build
 
       - name: Upload as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
           name: test-deployment-artifact
           path: build/
